@@ -10,6 +10,7 @@ def correct_scores(scores):
         corrected_scores.append(corrected_score)
     return corrected_scores
 
+
 # 測試函數
 original_scores = [53, 64, 75, 19, 92]
 incorrect_scores = [35, 46, 57, 91, 29]

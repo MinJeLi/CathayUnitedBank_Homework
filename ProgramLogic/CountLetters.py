@@ -9,19 +9,19 @@ def count_letters(text):
             continue
         # 計算各字元的出現次數
         if char in letter_count:
-            letter_count[char] = letter_count[char] + 1    
+            letter_count[char] = letter_count[char] + 1
         else:
             letter_count[char] = 1
 
     # 對字母作排序
     sorted_keys = sorted(letter_count)
     sorted_dict = dict()
-    
+
     for key in sorted_keys:
         sorted_dict[key] = letter_count[key]
-        
+
     return sorted_dict
-    
+
 
 # 測試函數
 text = "Hello welcome to Cathay 60th year anniversary"

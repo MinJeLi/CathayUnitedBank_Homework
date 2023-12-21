@@ -8,6 +8,7 @@ def last_person_position(n):
         people.pop(index)
     return people[0]
 
+
 # 輸入範圍：0 到 100
 n = int(input("Enter the number of people (0 to 100): "))
 if 0 < n <= 100:
