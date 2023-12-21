@@ -106,14 +106,18 @@ try:
             CardTitles = StopCardsPage.find_elements(By.CSS_SELECTOR,' div.cubre-m-compareCard__title')
             
             logging.info("-----Print Card title & screenshot-------")
+            count = 1
             for dot, cardtitle in zip(DotList,CardTitles):
                 dot.click()
                 WebDriverWait(StopCardsPage, 5).until(EC.visibility_of(cardtitle))
                 
                 if cardtitle.is_displayed():
-                    print(cardtitle.text)
-                    driver.save_screenshot(f"stop_card_{cardtitle.text}.png")
-                
+                    print(f'{count} {cardtitle.text}')
+                    driver.save_screenshot(f"stop_card_{cardtitle.text}_{count}.png")
+                    count = count +1
+                    
+            print(f'It has {count} stop cards')
+                            
     except TimeoutException:    
         logging.error("Timed out waiting for Stop card page to be visible.")
 
