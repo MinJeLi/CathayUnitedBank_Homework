@@ -4,13 +4,15 @@ def last_person_position(n):
     index = 0
     while len(people) > 1:
         # 每次跳過2個人（報數1, 2），然後移除第3個人
+        # Skip every two people (counting 1, 2), then remove the third person.
         index = (index + 2) % len(people)
         people.pop(index)
     return people[0]
 
 
 # 輸入範圍：0 到 100
-n = int(input("Enter the number of people (0 to 100): "))
+# Input range: 0 to 100
+n = int(input("Enter the number of people (1 to 100): "))
 if 0 < n <= 100:
     print(f"The position of the last person is: {last_person_position(n)}")
 else:
